@@ -1,0 +1,21 @@
+{
+  "name": "file-manager",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Eve337/File-Manager.git"
+  },
+  "author": "Eve337",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Eve337/File-Manager/issues"
+  },
+  "homepage": "https://github.com/Eve337/File-Manager#readme"
+}
