@@ -1,3 +1,6 @@
+import path from 'path';
+import os from 'os';
+
 
 const greetings = () => {
   const username = process.env.npm_config_username;
@@ -8,6 +11,7 @@ const greetings = () => {
     process.env.username = "unknown user";
   }
 
+  process.chdir(os.homedir());
   console.log(`Welcome to the File Manager, ${process.env.username}!`)
 }
 
@@ -15,7 +19,9 @@ function cli () {
   greetings();
 
   process.stdin.on('data', (chunk, _) => {
-    let data = chunk.toString();
+    let operation = chunk.toString();
+
+    // let result = getResultOfOperation(operation);
   });
 
   process.on("SIGTERM", () => {
