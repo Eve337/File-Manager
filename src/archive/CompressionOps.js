@@ -9,7 +9,7 @@ export const getCompressedFiles = (pathToFile, pathToDestination) => {
   const brotliCompression = zlib.createBrotliCompress();
   
   pipeline(rs, brotliCompression, ws, (err) => {
-    if (err) console.log(err);
+    if (err) console.log('Operations fail');
   });
 }
 
@@ -23,6 +23,6 @@ export const getDecompressedFiles = (pathToFile, pathToDestination) => {
 
 
   pipeline(rs, brotliDecompression, ws, (err) => {
-    if (err) console.log(err);
+    if (err) console.log('Operations fail');
   });
 }

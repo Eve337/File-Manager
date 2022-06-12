@@ -7,7 +7,7 @@ export const readFileOp = async (pathToFile) => {
 
   pipeline(rs, process.stdout, ((err) => {
     if (err) {
-      console.log('smth went wrong');
+      console.log('Operations fail');
     }
   }));
 }
@@ -35,7 +35,7 @@ export const copyFile = async (pathToFile, pathToCopyDir) => {
   const ws = fs.createWriteStream(pathToCopyDir);
 
   pipeline(rs, ws, (err) => {
-    if (err) console.log('Something went wrong', err);
+    if (err) console.log('Operations fail');
   })
 }
 
@@ -44,15 +44,15 @@ export const moveFile = (pathToFile, pathToCopyDir) => {
   const ws = fs.createWriteStream(pathToCopyDir);
 
   pipeline(rs, ws, (err) => {
-    if (err) console.log('Something wend wrong in copy op', err);
+    if (err) console.log('Operations fail');
     fs.unlink(pathToFile, (err) => {
-      if (err) console.log('Something went wrong in delete op', err);
+      if (err) console.log('Operations fail');
     });
   })
 }
 
 export const removeFile = (pathToFile) => {
   fs.unlink(pathToFile, (err) => {
-    if (err) console.log('Something went wrong delete op', err);
+    if (err) console.log('Operations fail', err);
   });
 }

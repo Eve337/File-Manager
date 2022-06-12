@@ -14,7 +14,6 @@ export const moveToDir = (newPath) => {
   if (!newPath) return false;
   
   if (path.isAbsolute(newPath)) {
-    // const normalizedPath = path.normalize(path.resolve()); // TODO: relative path
     process.chdir(newPath);
   }
 }
