@@ -22,3 +22,5 @@ export const typesOfOperations = {
   USERNAME: '--username',
   ARCHITECTURE: '--architecture'
 }
+
+export const exitCommand = '.exit';

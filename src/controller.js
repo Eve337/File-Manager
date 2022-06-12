@@ -1,9 +1,10 @@
-import { typesOfOperations } from './types/types.js';
+import { typesOfOperations, exitCommand } from './types/types.js';
 import { moveToTopDir, moveToDir, showAllFilesInDir } from './fs/navigation.js';
 import { readFileOp, addNewFile, renameFile, copyFile, moveFile, removeFile } from './fs/basicOperationsWithFile.js';
 import { createHash } from './hash/hashOps.js';
 import { getCompressedFiles, getDecompressedFiles } from './archive/CompressionOps.js';
 import { osController } from './os/osController.js';
+import { exitProcess } from './helpers/helpers.js';
 
 const { up, cd, ls, cat, add, rn, cp, mv, rm, os, hash, compress, decompress } = typesOfOperations;
 
@@ -50,8 +51,12 @@ export const getResultOfOperation = async (operation) => {
     case decompress:
       getDecompressedFiles(argumentToCommand, additionalArg);
       break;
+    case exitCommand:
+      exitProcess();
+      break;
     default:
       console.log('Invalid case');
+      break;
   }
   
 } 
