@@ -1,9 +1,6 @@
 import path from 'path';
-import os from 'os';
 import { getResultOfOperation } from './src/controller.js';
 import { greetings, exitProcess } from './src/helpers/helpers.js';
-
-
 
 
 function cli () {
@@ -24,7 +21,6 @@ function cli () {
   process.on("SIGINT", () => {
     exitProcess();
   });
-  
 }
 
 cli();
