@@ -1,8 +1,9 @@
 import { typesOfOperations } from './types/types.js';
 import { moveToTopDir, moveToDir, showAllFilesInDir } from './fs/navigation.js';
 import { readFileOp, addNewFile, renameFile, copyFile, moveFile, removeFile } from './fs/basicOperationsWithFile.js';
+import { osController } from './os/osController.js';
 
-const { up, cd, ls, cat, add, rn, cp, mv, rm } = typesOfOperations;
+const { up, cd, ls, cat, add, rn, cp, mv, rm, os } = typesOfOperations;
 
 export const getResultOfOperation = async (operation) => {
   const [commandWithoutArgs, argumentToCommand, additionalArg] = operation.split(' ');
@@ -34,6 +35,10 @@ export const getResultOfOperation = async (operation) => {
       break;
     case rm:
       removeFile(argumentToCommand);
+      break;
+    case os:
+      osController(argumentToCommand);
+      break;
     default:
       console.log('Invalid case');
   }

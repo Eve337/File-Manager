@@ -1,7 +1,6 @@
 import fs from 'fs';
 import { pipeline } from 'stream';
 import path from 'path';
-import { createPath } from '../helpers/helpers.js';
 
 export const readFileOp = async (pathToFile) => {
   const rs = fs.createReadStream(pathToFile, {flag: 'a+', encoding: 'UTF-8',});

@@ -1,4 +1,5 @@
 export const typesOfOperations = {
+  // FS SECTION //
   up: 'up',
   ls: 'ls',
   cd: 'cd',
@@ -12,4 +13,12 @@ export const typesOfOperations = {
   hash: 'hash',
   compress: 'compress',
   decompress: 'decompress',
+
+  // OS SECTION //
+
+  EOL: '--EOL',
+  CPUS: '--cpus',
+  HOMEDIR: '--homedir',
+  USERNAME: '--username',
+  ARCHITECTURE: '--architecture'
 }
