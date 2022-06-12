@@ -1,5 +1,6 @@
 import path from 'path';
 import os from 'os';
+import { getResultOfOperation } from './src/controller.js';
 
 
 const greetings = () => {
@@ -12,16 +13,18 @@ const greetings = () => {
   }
 
   process.chdir(os.homedir());
-  console.log(`Welcome to the File Manager, ${process.env.username}!`)
+  console.log(path.resolve());
+  console.log(`Welcome to the File Manager, ${process.env.username}!`);
 }
 
 function cli () {
   greetings();
 
-  process.stdin.on('data', (chunk, _) => {
-    let operation = chunk.toString();
+  process.stdin.on('data', async (chunk, _) => {
+    let operation = chunk.toString().trim();
 
-    // let result = getResultOfOperation(operation);
+    let result = await getResultOfOperation(operation);
+    console.log(path.resolve());
   });
 
   process.on("SIGTERM", () => {
